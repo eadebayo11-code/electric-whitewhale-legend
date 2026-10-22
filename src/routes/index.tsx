@@ -28,6 +28,17 @@ const BUY_URL = `https://pump.fun/coin/${CA}`;
 const DEX_URL = "https://dexscreener.com/solana/4qxsqmh6iedbdvtmp8r5mk2psagknk57pfgevo2vhczq";
 const X_URL = "https://x.com/WhiteWhaleMeme/all";
 
+const memes = [
+  { src: meme1.url, alt: "Whitewhale meme" },
+  { src: meme2.url, alt: "Whitewhale meme" },
+  { src: meme3.url, alt: "Whitewhale meme" },
+  { src: meme4.url, alt: "Whitewhale meme" },
+  { src: meme5.url, alt: "Whitewhale meme" },
+  { src: meme6.url, alt: "Whitewhale meme" },
+  { src: meme7.url, alt: "Whitewhale meme" },
+  { src: meme8.url, alt: "Whitewhale meme" },
+];
+
 const nav = [
   { href: "#tokenomics", label: "Tokenomics" },
   { href: "#buy", label: "How to Buy" },
