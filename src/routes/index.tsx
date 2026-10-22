@@ -2,6 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import hero from "@/assets/whale-hero.jpeg.asset.json";
+import meme1 from "@/assets/G88UWzlWAAAgsan.jpeg.asset.json";
+import meme2 from "@/assets/G-MccErWUAA2pvW.jpeg.asset.json";
+import meme3 from "@/assets/G9ojyHIWAAEw_gq.jpeg.asset.json";
+import meme4 from "@/assets/G-lYHwVXMAA1bm.jpeg.asset.json";
+import meme5 from "@/assets/G-vaursbMAAgF0A.jpeg.asset.json";
+import meme6 from "@/assets/G8ToG4WX0AQw0JA.jpeg.asset.json";
+import meme7 from "@/assets/G-4MwFfXgAEVEXG.jpeg.asset.json";
+import meme8 from "@/assets/G8JUARsWsAUSl2Y.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,8 +25,19 @@ export const Route = createFileRoute("/")({
 
 const CA = "a3W4qutoEJA4232T2gwZUfgYJTetr96pU4SJMwppump";
 const BUY_URL = `https://pump.fun/coin/${CA}`;
-const DEX_URL = `https://dexscreener.com/solana/${CA}`;
-const X_URL = "https://x.com/search?q=%24WHITEWHALE";
+const DEX_URL = "https://dexscreener.com/solana/4qxsqmh6iedbdvtmp8r5mk2psagknk57pfgevo2vhczq";
+const X_URL = "https://x.com/WhiteWhaleMeme/all";
+
+const memes = [
+  { src: meme1.url, alt: "Whitewhale meme" },
+  { src: meme2.url, alt: "Whitewhale meme" },
+  { src: meme3.url, alt: "Whitewhale meme" },
+  { src: meme4.url, alt: "Whitewhale meme" },
+  { src: meme5.url, alt: "Whitewhale meme" },
+  { src: meme6.url, alt: "Whitewhale meme" },
+  { src: meme7.url, alt: "Whitewhale meme" },
+  { src: meme8.url, alt: "Whitewhale meme" },
+];
 
 const nav = [
   { href: "#tokenomics", label: "Tokenomics" },
@@ -189,10 +208,8 @@ function Index() {
       <Section id="gallery" title="Meme Gallery">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           <img src={hero.url} alt="White Whale warrior" className="col-span-2 aspect-video w-full rounded-sm border border-border object-cover sm:row-span-2 sm:aspect-auto sm:h-full" />
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="flex aspect-square items-center justify-center rounded-sm border border-dashed border-border bg-card text-xs uppercase tracking-widest text-muted-foreground">
-              Meme drop soon
-            </div>
+          {memes.map((m) => (
+            <img key={m.src} src={m.src} alt={m.alt} className="aspect-square w-full rounded-sm border border-border object-cover transition hover:glow" />
           ))}
         </div>
       </Section>
