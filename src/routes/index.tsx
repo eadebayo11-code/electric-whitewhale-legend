@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import dexLogo from "@/assets/dexscreener.png.asset.json";
 import hero from "@/assets/whale-hero.jpeg.asset.json";
 import meme1 from "@/assets/G88UWzlWAAAgsan.jpeg.asset.json";
 import meme2 from "@/assets/G-MccErWUAA2pvW.jpeg.asset.json";
@@ -40,10 +41,10 @@ const memes = [
 ];
 
 const nav = [
-  { href: "#tokenomics", label: "Tokenomics" },
-  { href: "#buy", label: "How to Buy" },
-  { href: "#gallery", label: "Meme gallery" },
-  { href: "#news", label: "News" },
+  { href: "/#tokenomics", label: "Tokenomics" },
+  { href: "/#buy", label: "How to Buy" },
+  { href: "/#gallery", label: "Meme gallery" },
+  { href: "/news", label: "News" },
 ];
 
 const metrics = [
@@ -89,12 +90,7 @@ function XIcon() {
 }
 
 function DexIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M3 17l5-5 4 4 8-9" />
-      <path d="M15 7h5v5" />
-    </svg>
-  );
+  return <img src={dexLogo.url} alt="" className="h-6 w-6 object-contain" aria-hidden />;
 }
 
 function Index() {
@@ -211,14 +207,6 @@ function Index() {
           {memes.map((m) => (
             <img key={m.src} src={m.src} alt={m.alt} className="aspect-square w-full rounded-sm border border-border object-cover transition hover:glow" />
           ))}
-        </div>
-      </Section>
-
-      <Section id="news" title="News">
-        <div className="rounded-sm border border-border bg-card p-6">
-          <p className="text-xs uppercase tracking-widest text-primary">Latest</p>
-          <h3 className="mt-2 font-semibold">The whale has surfaced on pump.fun</h3>
-          <p className="mt-1 text-sm text-muted-foreground">$WHITEWHALE is live. More updates from the deep coming soon.</p>
         </div>
       </Section>
 
