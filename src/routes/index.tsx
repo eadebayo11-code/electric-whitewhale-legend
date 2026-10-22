@@ -17,8 +17,8 @@ export const Route = createFileRoute("/")({
 
 const CA = "a3W4qutoEJA4232T2gwZUfgYJTetr96pU4SJMwppump";
 const BUY_URL = `https://pump.fun/coin/${CA}`;
-const DEX_URL = `https://dexscreener.com/solana/${CA}`;
-const X_URL = "https://x.com/search?q=%24WHITEWHALE";
+const DEX_URL = "https://dexscreener.com/solana/4qxsqmh6iedbdvtmp8r5mk2psagknk57pfgevo2vhczq";
+const X_URL = "https://x.com/WhiteWhaleMeme/all";
 
 const nav = [
   { href: "#tokenomics", label: "Tokenomics" },
@@ -189,10 +189,8 @@ function Index() {
       <Section id="gallery" title="Meme Gallery">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
           <img src={hero.url} alt="White Whale warrior" className="col-span-2 aspect-video w-full rounded-sm border border-border object-cover sm:row-span-2 sm:aspect-auto sm:h-full" />
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="flex aspect-square items-center justify-center rounded-sm border border-dashed border-border bg-card text-xs uppercase tracking-widest text-muted-foreground">
-              Meme drop soon
-            </div>
+          {memes.map((m) => (
+            <img key={m.src} src={m.src} alt={m.alt} className="aspect-square w-full rounded-sm border border-border object-cover transition hover:glow" />
           ))}
         </div>
       </Section>
