@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import thumb1 from "@/assets/G88UWzlWAAAgsan.jpeg.asset.json";
-import thumb2 from "@/assets/G-vaursbMAAgF0A.jpeg.asset.json";
+import { useState } from "react";
+import thumb1 from "@/assets/season3-results.jpeg.asset.json";
+import thumb2 from "@/assets/season3-locked.jpeg.asset.json";
 
 export const Route = createFileRoute("/news")({
   head: () => ({
@@ -29,7 +30,7 @@ type Post = {
   title: string;
   img: string;
   alt: string;
-  body: React.ReactNode;
+  body: React.ReactNode[];
   cta?: { href: string; label: string };
 };
 
@@ -40,27 +41,25 @@ const posts: Post[] = [
     title: "Season 3 Results — Announcement Part One",
     img: thumb1.url,
     alt: "Season 3 results artwork",
-    body: (
-      <>
-        <p>The conclusion of our third and final season will be announced in two parts.</p>
-        <p>
-          From the beginning we have always said that $WHITEWHALE is a movement, belonging to the
-          people who bear the torch — not simply the person who struck the match. What more fitting
-          way, then, to wrap Season 3 by distributing 10M $WHITEWHALE tokens to our most loyal and
-          devoted holders.
-        </p>
-        <p>
-          Each holder&rsquo;s share is pro-rated based on our points system and can only be claimed
-          on <a href={SABLIER_X} target="_blank" rel="noreferrer" className="text-primary underline underline-offset-4 transition hover:text-glow">@Sablier</a>.
-        </p>
-        <p>Disregard any other claims of airdrops, as these are likely scams.</p>
-        <p>
-          Unclaimed tokens from this 10M prize pool will revert back to the ownership of the
-          treasury after 15 days and — as always — be used for the sole benefit of the project and
-          its holders.
-        </p>
-      </>
-    ),
+    body: [
+      <p key="a">The conclusion of our third and final season will be announced in two parts.</p>,
+      <p key="b">
+        From the beginning we have always said that $WHITEWHALE is a movement, belonging to the
+        people who bear the torch — not simply the person who struck the match. What more fitting
+        way, then, to wrap Season 3 by distributing 10M $WHITEWHALE tokens to our most loyal and
+        devoted holders.
+      </p>,
+      <p key="c">
+        Each holder&rsquo;s share is pro-rated based on our points system and can only be claimed
+        on <a href={SABLIER_X} target="_blank" rel="noreferrer" className="text-primary underline underline-offset-4 transition hover:text-glow">@Sablier</a>.
+      </p>,
+      <p key="d">Disregard any other claims of airdrops, as these are likely scams.</p>,
+      <p key="e">
+        Unclaimed tokens from this 10M prize pool will revert back to the ownership of the
+        treasury after 15 days and — as always — be used for the sole benefit of the project and
+        its holders.
+      </p>,
+    ],
     cta: { href: CLAIM_URL, label: "Claim your Season 3 rewards" },
   },
   {
@@ -69,23 +68,25 @@ const posts: Post[] = [
     title: "Season 3 — Part Two",
     img: thumb2.url,
     alt: "Treasury lock artwork",
-    body: (
-      <>
-        <p>This movement has never been about a single individual.</p>
-        <p>
-          It is about each and every single member of the community that continues to take a stand
-          against max extraction and paid influence.
-        </p>
-        <p>
-          Today the Treasury has permanently locked 500M coins. Combined with prior locks, this
-          represents well over half of the total supply.
-        </p>
-        <p className="font-display font-black text-primary text-glow">A $13M move. For you. It&rsquo;s always been for you.</p>
-      </>
-    ),
+    body: [
+      <p key="a">This movement has never been about a single individual.</p>,
+      <p key="b">
+        It is about each and every single member of the community that continues to take a stand
+        against max extraction and paid influence.
+      </p>,
+      <p key="c">
+        Today the Treasury has permanently locked 500M coins. Combined with prior locks, this
+        represents well over half of the total supply.
+      </p>,
+      <p key="d" className="font-display font-black text-primary text-glow">
+        A $13M move. For you. It&rsquo;s always been for you.
+      </p>,
+    ],
     cta: { href: STREAMFLOW_URL, label: "View the locked contract" },
   },
 ];
+
+const PREVIEW_COUNT = 2;
 
 function SonarRings() {
   return (
@@ -99,6 +100,9 @@ function SonarRings() {
 }
 
 function PostRow({ post, index }: { post: Post; index: number }) {
+  const [expanded, setExpanded] = useState(false);
+  const hasMore = post.body.length > PREVIEW_COUNT;
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 24 }}
@@ -126,7 +130,18 @@ function PostRow({ post, index }: { post: Post; index: number }) {
             </span>
           </div>
           <h2 className="mt-3 font-display text-xl font-black tracking-wide sm:text-2xl">{post.title}</h2>
-          <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">{post.body}</div>
+          <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+            {post.body.slice(0, PREVIEW_COUNT)}
+            {expanded && post.body.slice(PREVIEW_COUNT)}
+          </div>
+          {hasMore && (
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="mt-3 font-mono text-xs uppercase tracking-widest text-primary transition hover:text-glow"
+            >
+              {expanded ? "▲ Show less" : "▼ Read more"}
+            </button>
+          )}
           {post.cta && (
             <a
               href={post.cta.href}
