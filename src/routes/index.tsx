@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import dexLogo from "@/assets/dexscreener.png";
 import hero from "@/assets/whale-hero.jpeg";
-import meme1 from "@/assets/G88UWzlWAAAgsan.jpeg";
-import meme2 from "@/assets/G-MccErWUAA2pvW.jpeg";
-import meme3 from "@/assets/G9ojyHIWAAEw_gq.jpeg";
-import meme4 from "@/assets/G-lYHwVXMAA1bm.jpeg";
-import meme5 from "@/assets/G-vaursbMAAgF0A.jpeg";
-import meme6 from "@/assets/G8ToG4WX0AQw0JA.jpeg";
-import meme7 from "@/assets/G-4MwFfXgAEVEXG.jpeg";
-import meme8 from "@/assets/G8JUARsWsAUSl2Y.jpeg";
+import meme1 from "@/assets/G-PytiUWEAASQ7Z.jpeg";
+import meme2 from "@/assets/G9T4ISjWAAAnjIg.jpeg";
+import meme3 from "@/assets/G-vaursbMAAgF0A.jpeg";
+import meme4 from "@/assets/HF81gu0aYAAh0-s.jpeg";
+import meme5 from "@/assets/G-PytiUWEAASQ7Z.jpeg";
+import meme6 from "@/assets/G-lYHwVXMAA1bm_.jpeg";
+import meme7 from "@/assets/G_CU6hAW8AEFuR1.jpeg";
+import meme8 from "@/assets/G7mGnsDW4AAoBY6.jpeg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
