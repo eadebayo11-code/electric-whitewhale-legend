@@ -1,16 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import dexLogo from "@/assets/dexscreener.png";
-import hero from "@/assets/whale-hero.jpeg";
-import meme1 from "@/assets/G-PytiUWEAASQ7Z.jpeg";
-import meme2 from "@/assets/G9T4ISjWAAAnjIg.jpeg";
-import meme3 from "@/assets/G-vaursbMAAgF0A.jpeg";
-import meme4 from "@/assets/HF81gu0aYAAh0-s.jpeg";
-import meme5 from "@/assets/G-PytiUWEAASQ7Z.jpeg";
-import meme6 from "@/assets/G-lYHwVXMAA1bm_.jpeg";
-import meme7 from "@/assets/G_CU6hAW8AEFuR1.jpeg";
-import meme8 from "@/assets/G7mGnsDW4AAoBY6.jpeg";
+import dexLogo from "@/src/assets/dexscreener.png";
+import hero from "@/src/assets/whale-hero.jpeg";
+import meme1 from "@/src/assets/G-PytiUWEAASQ7Z.jpeg";
+import meme2 from "@/src/assets/G9T4ISjWAAAnjIg.jpeg";
+import meme3 from "@/src/assets/G-vaursbMAAgF0A.jpeg";
+import meme4 from "@/src/assets/HF81gu0aYAAh0-s.jpeg";
+import meme5 from "@/src/assets/G-PytiUWEAASQ7Z.jpeg";
+import meme6 from "@/src/assets/G-lYHwVXMAA1bm_.jpeg";
+import meme7 from "@/src/assets/G_CU6hAW8AEFuR1.jpeg";
+import meme8 from "@/src/assets/G7mGnsDW4AAoBY6.jpeg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
