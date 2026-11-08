@@ -31,14 +31,14 @@ const DEX_URL = "https://dexscreener.com/solana/4qxsqmh6iedbdvtmp8r5mk2psagknk57
 const X_URL = "https://x.com/WhiteWhaleMeme/all";
 
 const memes = [
-  { src: meme1.url, alt: "Whitewhale meme" },
-  { src: meme2.url, alt: "Whitewhale meme" },
-  { src: meme3.url, alt: "Whitewhale meme" },
-  { src: meme4.url, alt: "Whitewhale meme" },
-  { src: meme5.url, alt: "Whitewhale meme" },
-  { src: meme6.url, alt: "Whitewhale meme" },
-  { src: meme7.url, alt: "Whitewhale meme" },
-  { src: meme8.url, alt: "Whitewhale meme" },
+  { src: meme1, alt: "Whitewhale meme" },
+  { src: meme2, alt: "Whitewhale meme" },
+  { src: meme3, alt: "Whitewhale meme" },
+  { src: meme4, alt: "Whitewhale meme" },
+  { src: meme5, alt: "Whitewhale meme" },
+  { src: meme6, alt: "Whitewhale meme" },
+  { src: meme7, alt: "Whitewhale meme" },
+  { src: meme8, alt: "Whitewhale meme" },
 ];
 
 const nav = [
@@ -91,7 +91,7 @@ function XIcon() {
 }
 
 function DexIcon() {
-  return <img src="/assets/dexscreener.png" alt="" className="h-6 w-6 object-contain" aria-hidden />;
+  return <img src={dexLogo} alt="Dexscreener" className="h-6 w-6 object-contain" aria-hidden />;
 }
 
 function Index() {
@@ -135,7 +135,7 @@ function Index() {
 
       <section className="relative flex min-h-[100svh] items-end overflow-hidden">
         <motion.img
-          src="/assets/G-PytiUWEAASQ7Z.jpeg"
+          src={hero}
           alt="The White Whale warrior among floating storm rocks"
           className="absolute inset-0 h-full w-full object-cover"
           initial={{ scale: 1.15, opacity: 0 }}
@@ -204,9 +204,9 @@ function Index() {
 
       <Section id="gallery" title="Meme Gallery">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          <img src="/assets/G-PytiUWEAASQ7Z.jpeg" alt="White Whale warrior" className="col-span-2 aspect-video w-full rounded-sm border border-border object-cover sm:row-span-2 sm:aspect-auto sm:h-full" />
+          <img src={meme1} alt="White Whale warrior" className="col-span-2 aspect-video w-full rounded-sm border border-border object-cover sm:row-span-2 sm:aspect-auto sm:h-full" />
           {memes.map((m) => (
-            <img key={m.src} src="/assets/G_CU6hAW8AEFuR1.jpeg" alt={m.alt} className="aspect-square w-full rounded-sm border border-border object-cover transition hover:glow" />
+            <img key={m.src} src={m.src} alt={m.alt} className="aspect-square w-full rounded-sm border border-border object-cover transition hover:glow" />
           ))}
         </div>
       </Section>
