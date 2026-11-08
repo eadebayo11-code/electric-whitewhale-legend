@@ -1,17 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import dexLogo from "@/assets/dexscreener.png";
-import hero from "@/assets/whale-hero.jpeg";
-import meme1 from "@/assets/G-PytiUWEAASQ7Z.jpeg";
-import meme2 from "@/assets/G9T4ISjWAAAnjIg.jpeg";
-import meme3 from "@/assets/G-vaursbMAAgF0A.jpeg";
-import meme4 from "@/assets/HF81gu0aYAAh0-s.jpeg";
-import meme5 from "@/assets/G-PytiUWEAASQ7Z.jpeg";
-import meme6 from "@/assets/G-lYHwVXMAA1bm_.jpeg";
-import meme7 from "@/assets/G_CU6hAW8AEFuR1.jpeg";
-import meme8 from "@/assets/G7mGnsDW4AAoBY6.jpeg";
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -90,7 +79,7 @@ function XIcon() {
 }
 
 function DexIcon() {
-  return <img src={dexLogo.url} alt="" className="h-6 w-6 object-contain" aria-hidden />;
+  return <img src="/assets/dexscreener.png" alt="" className="h-6 w-6 object-contain" aria-hidden />;
 }
 
 function Index() {
@@ -134,7 +123,7 @@ function Index() {
 
       <section className="relative flex min-h-[100svh] items-end overflow-hidden">
         <motion.img
-          src={hero.url}
+          src="/assets/G-PytiUWEAASQ7Z.jpeg"
           alt="The White Whale warrior among floating storm rocks"
           className="absolute inset-0 h-full w-full object-cover"
           initial={{ scale: 1.15, opacity: 0 }}
@@ -203,9 +192,9 @@ function Index() {
 
       <Section id="gallery" title="Meme Gallery">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          <img src={hero.url} alt="White Whale warrior" className="col-span-2 aspect-video w-full rounded-sm border border-border object-cover sm:row-span-2 sm:aspect-auto sm:h-full" />
+          <img src="/assets/G-PytiUWEAASQ7Z.jpeg" alt="White Whale warrior" className="col-span-2 aspect-video w-full rounded-sm border border-border object-cover sm:row-span-2 sm:aspect-auto sm:h-full" />
           {memes.map((m) => (
-            <img key={m.src} src={m.src} alt={m.alt} className="aspect-square w-full rounded-sm border border-border object-cover transition hover:glow" />
+            <img key={m.src} src="/assets/G_CU6hAW8AEFuR1.jpeg" alt={m.alt} className="aspect-square w-full rounded-sm border border-border object-cover transition hover:glow" />
           ))}
         </div>
       </Section>
