@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import thumb1 from "/src/assets/season3-results.jpeg";
-import thumb2 from "/src/assets/season3-locked.jpeg";
+import thumb1 from "@/assets/season3-results.jpeg";
+import thumb2 from "@/assets/season3-locked.jpeg";
 
 export const Route = createFileRoute("/news")({
   head: () => ({
@@ -39,7 +39,7 @@ const posts: Post[] = [
     tag: "Announcement",
     date: "MAR 26, 2026",
     title: "Season 3 Results — Announcement Part One",
-    img: thumb1.url,
+    img: thumb1,
     alt: "Season 3 results artwork",
     body: [
       <p key="a">The conclusion of our third and final season will be announced in two parts.</p>,
@@ -66,7 +66,7 @@ const posts: Post[] = [
     tag: "Treasury",
     date: "MAR 26, 2026",
     title: "Season 3 — Part Two",
-    img: thumb2.url,
+    img: thumb2,
     alt: "Treasury lock artwork",
     body: [
       <p key="a">This movement has never been about a single individual.</p>,
